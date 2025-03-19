@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter a string" id="inp1"><br><br>
+        <button id="btn">check palindrome r not</button>
+        <span id="yes">It is a palindrome</span>
+        <span id="no">It is a not palindrome</span>
+
+    </form>
+    <script>
+        var form=document.getElementsByTagName("form")[0]
+        var inp1=document.getElementById("inp1")
+        var btn=document.getElementById("btn")
+        btn.addEventListener("click",function(e){
+            e.preventDefault()
+            var rev=inp1.value.split("").reverse().join("")
+            if (rev==inp1.value){
+                var yes=document.getElementById("yes")
+                yes.style.display="block";
+                var no=document.getElementById("no")
+                no.style.display="none";
+                
+            }
+            else{
+                var no=document.getElementById("no")
+                no.style.display="block";
+                var yes=document.getElementById("yes")
+                yes.style.display="none";
+            }
+        })
+
+    </script>
+</body>
+</html>
